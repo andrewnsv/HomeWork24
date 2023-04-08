@@ -8,7 +8,7 @@ const useEditRecord = () => {
 
   const editRecord = (id, newData) => {
     setLoading(true);
-    axios.put(`user/${id}`, newData).then((resp) => {
+    axios.put(`records/${id}`, newData).then(resp => {
       setData(resp);
       setLoading(false);
     });

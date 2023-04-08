@@ -6,7 +6,7 @@ import App from './App';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://642b0b34b11efeb759a94d2d.mockapi.io/';
+axios.defaults.baseURL = 'http://127.0.0.1:3000/';
 axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
 

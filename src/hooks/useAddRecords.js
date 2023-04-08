@@ -8,7 +8,7 @@ const useAddRecords = () => {
 
   const addRecord = (newUser) => {
     setLoading(true);
-    axios.post('user', newUser).then((resp) => {
+    axios.post('records', newUser).then((resp) => {
       setData(resp);
       setLoading(false);
     });

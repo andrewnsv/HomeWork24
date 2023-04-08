@@ -8,7 +8,7 @@ const useDeleteRecords = () => {
 
   const delRecord = (id) => {
     setLoading(true);
-    axios.delete(`user/${id}`).then((resp) => {
+    axios.delete(`records/${id}`).then((resp) => {
       setData(resp);
       setLoading(false);
     });

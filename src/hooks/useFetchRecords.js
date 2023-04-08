@@ -8,7 +8,7 @@ const useFetchRecords = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('user').then((resp) => {
+    axios.get('records').then((resp) => {
       setData(resp);
       setLoading(false);
     });
