@@ -21,7 +21,7 @@ const useFetchRecords = (isManual = false) => {
       const data = await axios.get("records");
       recordsCtx.setRecords(data);
       setLoading(false);
-      
+
     } catch (err) {
       console.log(err);
     }

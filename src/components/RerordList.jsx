@@ -1,6 +1,8 @@
 import React from "react";
 import PhoneCard from "./PhoneCard";
 
+import '../scss/recordList.scss'
+
 import useDeleteRecords from "../hooks/useDeleteRecords";
 import useEdithRecords from "../hooks/useEditRecords";
 
@@ -28,9 +30,9 @@ const RecordList = (props) => {
   }
 
   return (
-    <div>
+    <div className="item-card-wraper">
       {props.recordList?.data.map((record, index) => (
-        <div key={`phone-card-${index}`}>
+        <div className="items" key={`phone-card-${index}`}>
           {editIndex === index ? (
             <>
               <input

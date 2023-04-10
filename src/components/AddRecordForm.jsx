@@ -1,5 +1,6 @@
 import useAddRecords from '../hooks/useAddRecords'
 
+import '../scss/addRerodsBtn.scss'
 const AddRecordForm = () => {
     const { addRecord } = useAddRecords();
   
@@ -13,7 +14,7 @@ const AddRecordForm = () => {
   
     return (
       <>
-        <button onClick={addRecordHandler}>Add record</button>
+        <button className='add-record' onClick={addRecordHandler}>Add record</button>
       </>
     );
   };
