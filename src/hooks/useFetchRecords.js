@@ -1,20 +1,33 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
 
-const useFetchRecords = () => {
-  const [data, setData] = useState(null);
+import { RecordDataContext } from "../providers/recordDataContex";
+
+const useFetchRecords = (isManual = false) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(undefined);
 
+  const recordsCtx = useContext(RecordDataContext);
+
   useEffect(() => {
-    setLoading(true);
-    axios.get('records').then((resp) => {
-      setData(resp);
-      setLoading(false);
-    });
+    if (!isManual) {
+      fetchData();
+    }
   }, []);
 
-  return { data, loading, error };
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const data = await axios.get("records");
+      recordsCtx.setRecords(data);
+      setLoading(false);
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return { data: recordsCtx.records, loading, error, fetchData };
 };
 
 export default useFetchRecords;

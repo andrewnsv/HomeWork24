@@ -1,15 +1,18 @@
 import "./App.css";
 import React from "react";
 
-import AddRecordForm from './components/AddRecordForm'
-import PhoneBookRecords from './components/PhoneBookRecords'
+import AddRecordForm from "./components/AddRecordForm";
+import PhoneBookRecords from "./components/PhoneBookRecords";
+import RecordDataContextProvider from './providers/recordDataContex'
 
 function App() {
   return (
-    <div className="App">
-      <AddRecordForm />
-      <PhoneBookRecords />
-    </div>
+    <RecordDataContextProvider>
+      <div className="App">
+        <AddRecordForm />
+        <PhoneBookRecords />
+      </div>
+    </RecordDataContextProvider>
   );
 }
 
